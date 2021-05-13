@@ -43,7 +43,6 @@ def main(args):
     
     return: a series of print lines and a Pandas DF Table showing results
     '''
-    data = pd.read_csv("Exam4_ExampleData.txt")
     kmer_list = get_kmers(args.input_string, args.k_length)[0]
     poss_kmers = get_kmers(args.input_string, args.k_length)[1]
     complexity = get_kmers(args.input_string, args.k_length)[2]
