@@ -27,7 +27,7 @@ def get_kmers(input_string, k_length):
 
     complexity = float(len(kmer_list)) / float(poss_kmers) # Caluclates the complexity as a float (includes decimals)
     
-    return k_length, kmer_list, poss_kmers, complexity
+    return kmer_list, poss_kmers, complexity
     
     # This block creates a Pandas DF with these column headers. It then populates the DF with the appropriate data.
     # This code was tested in Jupyter Notebook and produces the correct table/dataframe.
@@ -44,9 +44,9 @@ def main(args):
     return: a series of print lines and a Pandas DF Table showing results
     '''
     data = pd.read_csv("Exam4_ExampleData.txt")
-    kmer_list = get_kmers(args.input_string, args.k_length)[1]
-    poss_kmers = get_kmers(args.input_string, args.k_length)[2]
-    complexity = get_kmers(args.input_string, args.k_length)[3]
+    kmer_list = get_kmers(args.input_string, args.k_length)[0]
+    poss_kmers = get_kmers(args.input_string, args.k_length)[1]
+    complexity = get_kmers(args.input_string, args.k_length)[2]
     
     print('The size of k (as inputted) is: ' + str(args.k_length))  # Returns the inputted k_length value
     print('The list of observed kmers is: ' + str(kmer_list))  # Return the final list as a string
